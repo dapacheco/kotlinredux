@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Kotlin Redux</string>
+    <string name="addButtonText">Add</string>
+    <string name="removeButtonText">Remove</string>
+    <string name="counterInitialValue">Counter value is</string>
 </resources>

@@ -16,9 +16,9 @@ class BasicStore<S, A>(val reducer: (S, A) -> S, var state : S) : Store<S, A>  {
     var listeners : MutableList<(S) -> Unit> = ArrayList<(S) -> Unit>()
 
     override fun dispatch(action : A) {
-        state = reducer.invoke(state, action)
+        state = reducer(state, action)
         listeners.forEach  {
-            it.invoke(state)
+            it(state)
         }
     }
 

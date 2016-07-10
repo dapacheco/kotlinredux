@@ -12,8 +12,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
     tools:context="com.davepacheco.kotlinredux.MainActivity">
-
 
     <TextView
         android:id="@+id/counter_text"
@@ -21,25 +21,21 @@
         android:layout_height="wrap_content"
         android:text="Counter value is @{counter}" />
 
-    <Button
-        android:id="@+id/add_button"
-        android:layout_width="100sp"
-        android:layout_height="40sp"
-        android:text="Add"
-        android:layout_below="@+id/remove_button"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="51dp" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/add_button"
+            android:layout_width="100sp"
+            android:layout_height="40sp"
+            android:text="@string/addButtonText" />
 
-    <Button
-        android:id="@+id/remove_button"
-        android:layout_width="100sp"
-        android:layout_height="40sp"
-        android:text="Remove"
-        android:layout_below="@+id/counter_text"
-        android:layout_toRightOf="@+id/add_button"
-        android:layout_toEndOf="@+id/add_button"
-        android:layout_marginTop="78dp" />
+        <Button
+            android:id="@+id/remove_button"
+            android:layout_width="100sp"
+            android:layout_height="40sp"
+            android:text="@string/removeButtonText" />
 
 </RelativeLayout>
 </layout>
