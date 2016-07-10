@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable name="counter" type="Integer"/>
+    </data>
+
+<RelativeLayout
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,11 +14,12 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.davepacheco.kotlinredux.MainActivity">
 
+
     <TextView
         android:id="@+id/counter_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Counter value is" />
+        android:text="Counter value is @{counter}" />
 
     <Button
         android:id="@+id/add_button"
@@ -36,3 +42,4 @@
         android:layout_marginTop="78dp" />
 
 </RelativeLayout>
+</layout>

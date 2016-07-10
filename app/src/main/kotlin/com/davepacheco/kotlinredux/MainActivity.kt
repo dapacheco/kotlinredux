@@ -1,7 +1,9 @@
 package com.davepacheco.kotlinredux
 
+import android.databinding.DataBindingUtil
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.davepacheco.kotlinredux.databinding.ActivityMainBinding
 import com.davepacheco.kotlinredux.redux.BasicStore
 import com.davepacheco.kotlinredux.redux.counter
 import kotlinx.android.synthetic.main.activity_main.*
@@ -15,7 +17,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        counter_text.text = "Counter is ${store.state}"
+        val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main);
+
+        binding.counter = store.state
+
+
+//        counter_text.text = "Counter is ${store.state}"
 
         add_button.onClick { store.dispatch("INCREMENT") }
         remove_button.onClick { store.dispatch("DECREMENT") }
